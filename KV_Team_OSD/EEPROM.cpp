@@ -24,13 +24,13 @@ static const uint8_t EEPROM_DEFAULT[EEPROM_SETTINGS] = {
 0,   // S_RSSIMIN                   1
 255, // S_RSSIMAX                   2
 60,  // S_RSSI_ALARM                3
-1,   // S_MWRSSI                    4
-0,   // S_PWMRSSI                   5
+0,   // S_MWRSSI                    4
+1,   // S_PWMRSSI                   5
 8,   // S_PWMRSSIDIVIDER            6    // PWM Freq 500Hz=8, 1KHz=4 (Divider to avoid value >255)
 105, // S_VOLTAGEMIN                7
 3,   // S_BATCELLS                  8
 100, // S_DIVIDERRATIO              9
-1,   // S_MAINVOLTAGE_VBAT          10
+0,   // S_MAINVOLTAGE_VBAT          10
 100, // S_VIDDIVIDERRATIO           11
 0,   // S_VIDVOLTAGE_VBAT           12
 //90,  // S_TEMPERATUREMAX            13   // Do not remove yet
@@ -182,7 +182,7 @@ static const uint8_t EEPROM_PAL_DEFAULT[EEPROM_ITEM_LOCATION-EEPROM_SETTINGS] = 
 
 	14,   // L_AMPERAGEPOSITIONROW LINE15+10
 	23,   // L_AMPERAGEPOSITIONCOL
-	1,    // L_AMPERAGEPOSITIONDSPL
+	0,    // L_AMPERAGEPOSITIONDSPL
 
 	14,   // L_PMETERSUMPOSITIONROW LINE15+16
 	14,   // L_PMETERSUMPOSITIONCOL
@@ -306,7 +306,7 @@ uint8_t EEPROM_NTSC_DEFAULT[EEPROM_ITEM_LOCATION-EEPROM_SETTINGS] = {
 
 	12,   // L_AMPERAGEPOSITIONROW LINE15+10
 	23,   // L_AMPERAGEPOSITIONCOL
-	1,    // L_AMPERAGEPOSITIONDSPL
+	0,    // L_AMPERAGEPOSITIONDSPL
 
 	12,   // L_PMETERSUMPOSITIONROW LINE15+16
 	14,   // L_PMETERSUMPOSITIONCOL

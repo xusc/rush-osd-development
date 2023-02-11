@@ -257,7 +257,7 @@ const char screen_item_24[] PROGMEM = "AMPERAGE";
 const char screen_item_25[] PROGMEM = "MA/H CONSUM";
 const char screen_item_26[] PROGMEM = "CALLSIGN";
 
-PROGMEM const char *item_table[] =
+PROGMEM const char * const item_table[] =
 {
 	screen_item_00,
 	screen_item_01,
@@ -475,8 +475,12 @@ void loop()
     } 
 	
   if (Settings[S_PWMRSSI] && !Settings[S_MWRSSI]){
-	rssiADC = pulseIn(PWMrssiPin, HIGH,15000)/Settings[S_PWMRSSIDIVIDER]; // Reading W/time out (microseconds to wait for pulse to start: 15000=0.015sec)
+    int value = pulseIn(PWMrssiPin, HIGH,5000)/Settings[S_PWMRSSIDIVIDER]; // Reading W/time out (microseconds to wait for pulse to start: 5000=0.005sec)
+    // ignore timeout
+    if (value != 0) {
+      rssiADC = value;
     }
+  }
    
   // Blink Basic Sanity Test Led at 1hz - this stuff introduces strange behavior on my system
   if(tenthSec>10)
